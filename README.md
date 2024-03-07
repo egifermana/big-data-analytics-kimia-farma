@@ -68,7 +68,7 @@ FROM `kimia_farma.kf_final_transaction` t
 JOIN `kimia_farma.kf_kantor_cabang` c ON t.branch_id = c.branch_id
 JOIN `kimia_farma.kf_product` p ON t.product_id = p.product_id;
 ```
-This part specifies the tables to be joined (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`) and the conditions for joining them. It joins `kf_final_transaction` with `kf_kantor_cabang` on `branch_id` and `kf_final_transaction` with `kf_productonproduct_id`.
+This part specifies the tables to be joined (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`) and the conditions for joining them. It joins `kf_final_transaction` with `kf_kantor_cabang` on `branch_id` and `kf_final_transaction` with `kf_product` on `product_id`.
 
 ## Dashboard
 Dashboard link: [Performance Analytics Dashboard - Kimia Farma](https://lookerstudio.google.com/reporting/18f1346f-49e6-41f9-b46c-c47cf0e4fdf9)
