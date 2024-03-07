@@ -18,7 +18,7 @@ The objective of the project is to evaluate the business performance of Kimia Fa
 The datasets include transaction information `kf_final_transaction`, inventory data `kf_inventory`, branch information `kf_kantor_cabang`, and product information `kf_product`.
 
 ## SQL Syntax
-This SQL syntax is used to create a new table named kf_analysis in the database kimia_farma. The new table is populated with data selected from existing tables (kf_final_transaction, kf_kantor_cabang, and kf_product) using a SELECT statement.
+This SQL syntax is used to create a new table named `kf_analysi`s in the database `kimia_farma`. The new table is populated with data selected from existing tables (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`) using a `SELECT` statement.
 #### Table Creation
 ```SQL
 CREATE TABLE `kimia_farma.kf_analysis` AS
