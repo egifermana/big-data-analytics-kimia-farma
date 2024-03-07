@@ -23,6 +23,7 @@ This SQL syntax is used to create a new table named kf_analysis in the database 
 ```SQL
 CREATE TABLE `kimia_farma.kf_analysis` AS
 ```
+This line creates a new table named `kf_analysis` in the `kimia_farma` database.
 #### Data Selection and Transformation
 ```SQL
 SELECT
@@ -38,7 +39,6 @@ SELECT
     p.product_name,
     t.price,
     t.discount_percentage,
-    # make a gross profit percentage based on price
     CASE 
         WHEN t.price <= 50000 THEN 0.1
         WHEN t.price > 50000 AND t.price <= 100000 THEN 0.15
@@ -46,7 +46,7 @@ SELECT
         WHEN t.price > 300000 AND t.price <= 500000 THEN 0.25
         ELSE 0.3
     END AS gross_profit_percentage,
-    (t.price * (1 - (t.discount_percentage / 100))) AS nett_sales, # count nett sales
+    (t.price * (1 - (t.discount_percentage / 100))) AS nett_sales,
     (t.price * (1 - (t.discount_percentage / 100)) * 
     CASE 
         WHEN t.price <= 50000 THEN 0.1
@@ -54,11 +54,35 @@ SELECT
         WHEN t.price > 100000 AND t.price <= 300000 THEN 0.2
         WHEN t.price > 300000 AND t.price <= 500000 THEN 0.25
         ELSE 0.3
-    END) AS nett_profit, # count nett profit
+    END) AS nett_profit,
     c.rating AS rating_branch
 ```
+This SELECT statement fetches data from the specified tables (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`). It selects specific columns from these tables and performs transformations on some columns:
+* It calculates `gross_profit_percentage` based on the `price` column.
+* It calculates `nett_sales` by subtracting the discount from the `price`.
+* It calculates `nett_profit` based on `nett_sales` and `gross_profit_percentage`.
+
+#### Data Joins
 ```SQL
 FROM `kimia_farma.kf_final_transaction` t
 JOIN `kimia_farma.kf_kantor_cabang` c ON t.branch_id = c.branch_id
 JOIN `kimia_farma.kf_product` p ON t.product_id = p.product_id;
 ```
+This part specifies the tables to be joined (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`) and the conditions for joining them. It joins `kf_final_transaction` with `kf_kantor_cabang` on `branch_id` and `kf_final_transaction` with `kf_productonproduct_id`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
