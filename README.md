@@ -15,13 +15,16 @@ The objective of the project is to evaluate the business performance of Kimia Fa
 - **Challenge 3**: Creating a performance dashboard in Google Looker Studio. You will need to create a dashboard in Google Looker Studio that visualizes the data from the analytical table you created in BigQuery.
 
 ## Dataset
+The datasets include transaction information `kf_final_transaction`, inventory data `kf_inventory`, branch information `kf_kantor_cabang`, and product information `kf_product`.
 
-![Image](misc/data-erd.png)
 ## SQL Syntax
-
+This SQL syntax is used to create a new table named kf_analysis in the database kimia_farma. The new table is populated with data selected from existing tables (kf_final_transaction, kf_kantor_cabang, and kf_product) using a SELECT statement.
+#### Table Creation
 ```SQL
-# create new table
 CREATE TABLE `kimia_farma.kf_analysis` AS
+```
+#### Data Selection and Transformation
+```SQL
 SELECT
     t.transaction_id,
     t.date,
@@ -53,6 +56,8 @@ SELECT
         ELSE 0.3
     END) AS nett_profit, # count nett profit
     c.rating AS rating_branch
+```
+```SQL
 FROM `kimia_farma.kf_final_transaction` t
 JOIN `kimia_farma.kf_kantor_cabang` c ON t.branch_id = c.branch_id
 JOIN `kimia_farma.kf_product` p ON t.product_id = p.product_id;
