@@ -16,7 +16,7 @@ The objective of the project is to evaluate the business performance of Kimia Fa
 
 ## Dataset
 
-![Image](https://drive.google.com/file/d/1pFsPfGl27bPJ_JAQpLxFtQm81kKWnMc2/view?usp=drive_link)
+![Image](misc/data-erd.png)
 ## SQL Syntax
 
 ```SQL
