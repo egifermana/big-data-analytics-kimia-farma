@@ -98,7 +98,7 @@ This query provides the following insights:
 * Total number of customers per branch.
 
 ## Dashboard
-Dashboard link: [Performance Analytics Dashboard - Kimia Farma](https://lookerstudio.google.com/reporting/18f1346f-49e6-41f9-b46c-c47cf0e4fdf9)
+Link: [Performance Analytics Dashboard - Kimia Farma](https://lookerstudio.google.com/reporting/18f1346f-49e6-41f9-b46c-c47cf0e4fdf9)
 
 ![dashboard](misc/dashboard.png)
 
