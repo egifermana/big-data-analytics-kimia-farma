@@ -70,6 +70,33 @@ JOIN `kimia_farma.kf_product` p ON t.product_id = p.product_id;
 ```
 This part specifies the tables to be joined (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`) and the conditions for joining them. It joins `kf_final_transaction` with `kf_kantor_cabang` on `branch_id` and `kf_final_transaction` with `kf_product` on `product_id`.
 
+#### Exploratory Data Analysis
+```SQL
+SELECT
+    COUNT(*) AS total_transactions,
+    MIN(date) AS earliest_date,
+    MAX(date) AS latest_date,
+    AVG(price) AS average_price,
+    AVG(discount_percentage) AS average_discount_percentage,
+    AVG(gross_profit_percentage) AS average_gross_profit_percentage,
+    SUM(nett_sales) AS total_net_sales,
+    SUM(nett_profit) AS total_net_profit,
+    AVG(rating_transaction) AS average_transaction_rating,
+    AVG(rating_branch) AS average_branch_rating,
+    branch_name,
+    COUNT(DISTINCT customer_name) AS total_customers
+FROM `kimia_farma.kf_analysis`
+GROUP BY branch_name
+ORDER BY total_net_sales DESC;
+```
+This query provides the following insights:
+* Total number of transactions.
+* Earliest and latest transaction dates.
+* Average price, discount percentage, and gross profit percentage.
+* Total net sales and net profit.
+* Average transaction and branch ratings.
+* Total number of customers per branch.
+
 ## Dashboard
 Dashboard link: [Performance Analytics Dashboard - Kimia Farma](https://lookerstudio.google.com/reporting/18f1346f-49e6-41f9-b46c-c47cf0e4fdf9)
 
