@@ -1,4 +1,4 @@
--- Create New Table in Kimia Farma Database
+-- Create a New Table in the Kimia Farma Database
 CREATE TABLE `kimia_farma.kf_analysis` AS
 SELECT
     t.transaction_id,
