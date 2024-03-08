@@ -1,3 +1,4 @@
+-- Create New Table in Kimia Farma Database
 CREATE TABLE `kimia_farma.kf_analysis` AS
 SELECT
     t.transaction_id,
@@ -32,3 +33,22 @@ SELECT
 FROM `kimia_farma.kf_final_transaction` t
 JOIN `kimia_farma.kf_kantor_cabang` c ON t.branch_id = c.branch_id
 JOIN `kimia_farma.kf_product` p ON t.product_id = p.product_id;
+
+
+-- Exploratory Data Analysis
+SELECT
+    COUNT(*) AS total_transactions,
+    MIN(date) AS earliest_date,
+    MAX(date) AS latest_date,
+    AVG(price) AS average_price,
+    AVG(discount_percentage) AS average_discount_percentage,
+    AVG(gross_profit_percentage) AS average_gross_profit_percentage,
+    SUM(nett_sales) AS total_net_sales,
+    SUM(nett_profit) AS total_net_profit,
+    AVG(rating_transaction) AS average_transaction_rating,
+    AVG(rating_branch) AS average_branch_rating,
+    branch_name,
+    COUNT(DISTINCT customer_name) AS total_customers
+FROM `kimia_farma.kf_analysis`
+GROUP BY branch_name
+ORDER BY total_net_sales DESC;
