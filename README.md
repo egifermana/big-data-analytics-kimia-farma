@@ -10,11 +10,11 @@ The Program Project-Based Internship collaboration between [Rakamin Academy](htt
 The objective of the project is to evaluate the business performance of Kimia Farma from 2020 to 2023. Required to complete a series of challenges that involve importing data sets into BigQuery, creating analytical tables, and building a dashboard in Google Looker Studio.
 
 ## Challenges
-- **Challenge 1**: Importing data sets into BigQuery. You will need to import four data sets provided by Kimia Farma.
-- **Challenge 2**: Creating analytical tables in BigQuery. You will need to create a new table in BigQuery that combines the data from the four imported datasets.
-- **Challenge 3**: Creating a performance dashboard in Google Looker Studio. You will need to create a dashboard in Google Looker Studio that visualizes the data from the analytical table you created in BigQuery.
+- **Challenge 1**: Importing data sets into BigQuery. Import four data sets provided by Kimia Farma.
+- **Challenge 2**: Creating analytical tables in BigQuery. Create a new table in BigQuery that combines the data from the four imported datasets.
+- **Challenge 3**: Creating a performance dashboard in Google Looker Studio. Create a dashboard in Google Looker Studio that visualizes the data from the analytical table you created in BigQuery.
 
-## Dataset
+## Datasets
 The datasets include transaction information `kf_final_transaction`, inventory data `kf_inventory`, branch information `kf_kantor_cabang`, and product information `kf_product`.
 
 ## SQL Syntax
