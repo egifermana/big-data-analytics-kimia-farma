@@ -15,7 +15,7 @@ The objective of the project is to evaluate the business performance of Kimia Fa
 - **Challenge 3**: Creating a performance dashboard in Google Looker Studio. Create a dashboard in Google Looker Studio that visualizes the data from the analytical table you created in BigQuery.
 
 ## Tools
-![Google BigQuery]()
+<img src="misc/logo1.png" alt="Google BigQuery" width="100" height="100">
 
 ## Datasets
 The datasets include transaction information `kf_final_transaction`, inventory data `kf_inventory`, branch information `kf_kantor_cabang`, and product information `kf_product`.
