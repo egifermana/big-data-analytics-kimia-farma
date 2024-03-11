@@ -19,7 +19,7 @@ The datasets include transaction information `kf_final_transaction`, inventory d
 
 ## SQL Syntax
 This SQL syntax is used to create a new table named `kf_analysis` in the database `kimia_farma`. The new table is populated with data selected from existing tables (`kf_final_transaction`, `kf_kantor_cabang`, and `kf_product`).
-#### Table Creation
+#### Create New Table
 ```SQL
 CREATE TABLE `kimia_farma.kf_analysis` AS
 ```
